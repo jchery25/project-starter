@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom"; // Import Link for navigation
 import MicroPostCard from "../components/MicroPostCard";
 import LoadingSpinner from "../components/LoadingSpinner";
 import ErrorAlert from "../components/ErrorAlert";
@@ -36,7 +37,18 @@ function PostsListPage() {
     <div className="container-fluid text-center">
       <div className="row justify-content-center">
         {posts.map((entryData) => (
-          <MicroPostCard {...entryData} key={entryData.id} />
+          <div key={entryData.id} className="col-md-4">
+            <MicroPostCard {...entryData} />
+            <div className="text-center">
+              {/* Link to EditPostPage with the post ID */}
+              <Link
+                to={`/posts/edit/${entryData.id}`}
+                className="btn btn-warning mt-3"
+              >
+                Edit
+              </Link>
+            </div>
+          </div>
         ))}
       </div>
     </div>
