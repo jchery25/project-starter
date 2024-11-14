@@ -3,6 +3,7 @@ import PostsListPage from "./pages/PostsListPage";
 import PostFormPage from "./pages/PostFormPage";
 import ShowPostPage from "./pages/ShowPostPage";
 import AboutUsPage from "./pages/AboutUsPage";
+import StatsPage from "./pages/StatsPage";
 
 import "./App.css";
 
@@ -37,6 +38,12 @@ function App() {
       <div className="container-xl text-center">
         <div className="row justify-content-center">
           <Routes>
+            <Route
+              path="/stats"
+              element={
+                <StatsPage totalPost="0" mostLiked={[]} leastLiked={[]} />
+              }
+            />
             <Route path="/posts/new" element={<PostFormPage />} />
             <Route path="/posts/:id" element={<ShowPostPage />} />
             <Route path="/about-us" element={<AboutUsPage />} />
