@@ -9,25 +9,25 @@ import "./App.css";
 
 function Navigation() {
   return (
-    <nav className="navbar navbar-expand-sm navbar-dark bg-dark shadow mb-3">
-      <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          Micro Blog
-        </Link>
-        <ul className="navbar-nav me-auto">
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/posts/new">
-              Create a Micro Post
-            </NavLink>
-          </li>
-          <li className="nav-item">
-            <NavLink className="nav-link" to="/about-us">
-              About Us
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-    </nav>
+<nav className="navbar navbar-expand-sm navbar-dark bg-dark shadow mb-3">
+<div className="container-fluid">
+<Link className="navbar-brand" to="/">
+Micro Blog
+</Link>
+<ul className="navbar-nav me-auto">
+<li className="nav-item">
+<NavLink className="nav-link" to="/posts/new">
+Create a Micro Post
+</NavLink>
+</li>
+<li className="nav-item">
+<NavLink className="nav-link" to="/about-us">
+About Us
+</NavLink>
+</li>
+</ul>
+</div>
+</nav>
   );
 }
 
@@ -36,14 +36,19 @@ function App() {
     <BrowserRouter>
       <Navigation />
       <div className="container-xl text-center">
-        <div className="row justify-content-center">
-          <Routes>
-            <Route path="/posts/new" element={<PostFormPage />} />
-            <Route path="/posts/:id" element={<ShowPostPage />} />
-            <Route path="/posts/edit/:id" element={<EditPostPage />} />{" "}
-            {/* Add Edit Post route */}
-            <Route path="/about-us" element={<AboutUsPage />} />
-            <Route path="/" element={<PostsListPage />} />
+        <div 
+          className="row justify-content-center"
+          >
+        <Routes>
+          <Route path="/posts/new" element={
+            <PostFormPage />} 
+            />
+          
+          <Route path="/posts/edit/:id" element={<EditPostPage />} />{" "}
+          {/* Add Edit Post route */}
+          <Route path="/about-us" element={<AboutUsPage />} />
+          <Route path="/posts/:id" element={<ShowPostPage />} />
+          <Route path="/" element={<PostsListPage />} />
           </Routes>
         </div>
       </div>
