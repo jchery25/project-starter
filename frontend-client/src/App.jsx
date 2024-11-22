@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router-dom";
 import PostsListPage from "./pages/PostsListPage";
 import PostFormPage from "./pages/PostFormPage";
 import ShowPostPage from "./pages/ShowPostPage";
+import EditPostPage from "./pages/EditPostPage"; // Import the EditPostPage component
 import AboutUsPage from "./pages/AboutUsPage";
 import StatsPage from "./pages/StatsPage";
 
@@ -46,6 +47,8 @@ function App() {
             />
             <Route path="/posts/new" element={<PostFormPage />} />
             <Route path="/posts/:id" element={<ShowPostPage />} />
+            <Route path="/posts/edit/:id" element={<EditPostPage />} />{" "}
+            {/* Add Edit Post route */}
             <Route path="/about-us" element={<AboutUsPage />} />
             <Route path="/" element={<PostsListPage />} />
           </Routes>
